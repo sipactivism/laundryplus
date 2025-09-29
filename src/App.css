@@ -1,0 +1,43 @@
+#title {
+    margin-left: 25px;
+}
+
+#room {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* always 4 equal columns */
+  gap: 0.1rem;           /* space between machines */
+  max-width: 1000px;   /* optional: cap total room width */
+  margin: 0 auto;      /* center the room on the page */
+}
+
+.machine {
+  border: 1px solid black;
+  aspect-ratio: 1 / 1;  /* optional: keep them square */
+  display: flex;        /* center content inside */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.machine-id {
+    font-size: 30px;
+}
+
+.machine p {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.machine-icon {
+    height: 50%;
+    width: 50%;
+}
+
+#roomselect {
+    display: flex;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 80%;
+    height: 50px;
+    font-size: 150%;
+}
