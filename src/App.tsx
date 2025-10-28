@@ -10,19 +10,26 @@ const Machine = (props: any) => {
     case 0:
       if (typeof props.time_left === "string") {
         status_text = "finished";
-        status_img = "washersleep.png";
+
+        status_img =
+          props.machine_type === "washer"
+            ? "washersleep.png"
+            : "dryersleep.png";
       } else {
         status_text = "full";
-        status_img = "washerbusy.png";
+        status_img =
+          props.machine_type === "washer" ? "washerbusy.png" : "dryerbusy.png";
       }
       break;
     case 1:
       status_text = "empty";
-      status_img = "washerhappy.png";
+      status_img =
+        props.machine_type === "washer" ? "washerhappy.png" : "dryerhappy.png";
       break;
     case 2:
       status_text = "finished";
-      status_img = "washersleep.png";
+      status_img =
+        props.machine_type === "washer" ? "washersleep.png" : "dryersleep.png";
       break;
   }
   const currentTime = new Date(Date.now());
