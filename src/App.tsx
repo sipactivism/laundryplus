@@ -10,19 +10,19 @@ const Machine = (props: any) => {
     case 0:
       if (typeof props.time_left === "string") {
         status_text = "finished";
-        status_img = "laundrysleep.png";
+        status_img = "washersleep.png";
       } else {
         status_text = "full";
-        status_img = "laundrybusy.png";
+        status_img = "washerbusy.png";
       }
       break;
     case 1:
       status_text = "empty";
-      status_img = "laundryhappy.png";
+      status_img = "washerhappy.png";
       break;
     case 2:
       status_text = "finished";
-      status_img = "laundrysleep.png";
+      status_img = "washersleep.png";
       break;
   }
   const currentTime = new Date(Date.now());
