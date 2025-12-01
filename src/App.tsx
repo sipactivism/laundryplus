@@ -34,8 +34,8 @@ const Machine = (props: any) => {
   }
   const currentTime = new Date(Date.now());
   if (typeof props.time_left === "number") {
-    const minutes = currentTime.getMinutes();
     currentTime.setSeconds(currentTime.getSeconds() + props.time_left);
+    const minutes = currentTime.getMinutes();
     duration = `finishes at ${currentTime.getHours()}:${
       minutes < 10 ? "0" + String(minutes) : String(minutes)
     }`;
