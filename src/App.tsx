@@ -34,12 +34,11 @@ const Machine = (props: any) => {
   }
   const currentTime = new Date(Date.now());
   if (typeof props.time_left === "number") {
-    const oldMinutes = currentTime.getMinutes();
     currentTime.setSeconds(currentTime.getSeconds() + props.time_left);
     const minutes = currentTime.getMinutes();
-    duration = `finishes in ${
-      minutes - oldMinutes
-    } minutes (${currentTime.getHours()}:${
+    duration = `finishes in ${new Date(
+      currentTime.getTime() - new Date(Date.now()).getTime()
+    ).getMinutes()} minutes (${currentTime.getHours()}:${
       minutes < 10 ? "0" + String(minutes) : String(minutes)
     })`;
   }
